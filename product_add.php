@@ -6,6 +6,7 @@ include('../asset/includes/dbcon.php');
 $name = $_POST['medicine_name'];
 $price = $_POST['medicine_price'];
 $desc = $_POST['medicine_desc'];
+$user_name = $_POST['user_name'];
 $reorder = $_POST['reorder'];
 $category = $_POST['category'];
 $serial = $_POST['serial'];
@@ -39,8 +40,8 @@ if ($count > 0) {
         }
     }
 
-    mysqli_query($con, "INSERT INTO product(medicine_name,medicine_price,medicine_desc,medicine_pic,cat_id,reorder,branch_id,serial)
-			VALUES('$name','$price','$desc','$pic','$category','$reorder','$branch','$serial')")or die(mysqli_error($con));
+    mysqli_query($con, "INSERT INTO product(medicine_name,medicine_price,medicine_desc,user_name,medicine_pic,cat_id,reorder,branch_id,serial)
+			VALUES('$name','$price','$desc','$user_name','$pic','$category','$reorder','$branch','$serial')")or die(mysqli_error($con));
 
     echo "<script type='text/javascript'>alert('Successfully added new product!');</script>";
     echo "<script>document.location='product.php'</script>";

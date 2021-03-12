@@ -3,7 +3,7 @@ if(empty($_SESSION['id'])):
 header('Location:../index.php');
 endif;
 
-include('../asset/includes/dbcon.php');
+include('../dist/includes/dbcon.php');
 	$id = $_POST['id'];
 	$name =$_POST['name'];
 	$address =$_POST['address'];

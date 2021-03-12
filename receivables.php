@@ -46,7 +46,7 @@ endif;
   <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
   <body class="hold-transition skin-<?php echo $_SESSION['skin'];?> layout-top-nav">
     <div class="wrapper">
-      <?php include('../asset/includes/header_cashier.php');
+      <?php include('../asset/includes/header.php');
       include('../asset/includes/dbcon.php');
       ?>
       <!-- Full Width Column -->
@@ -82,7 +82,7 @@ $branch=$_SESSION['branch'];
 				  <h5><b>Accounts Receivables as of <?php echo date("M d, Y");?></b></h5>
                   
 				  <a class = "btn btn-success btn-print" href = "" onclick = "window.print()"><i class ="glyphicon glyphicon-print"></i> Print</a>
-							<a class = "btn btn-primary btn-print" href = "home_cashier.php"><i class ="glyphicon glyphicon-arrow-left"></i> Back to Homepage</a>   
+							<a class = "btn btn-primary btn-print" href = "home.php"><i class ="glyphicon glyphicon-arrow-left"></i> Back to Homepage</a>   
 						
                   <table class="table table-bordered table-striped">
                     <thead>

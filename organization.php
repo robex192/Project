@@ -8,11 +8,11 @@
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <!-- Bootstrap 3.3.5 -->
-        <link rel="stylesheet" href="../asset/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
         <!-- Font Awesome -->
-        <link rel="stylesheet" href="../asset/plugins/datatables/dataTables.bootstrap.css">
+        <link rel="stylesheet" href="../plugins/datatables/dataTables.bootstrap.css">
         <link rel="stylesheet" href="../asset/css/AdminLTE.min.css">
-        <link rel="stylesheet" href="../asset/plugins/select2/select2.min.css">
+        <link rel="stylesheet" href="../plugins/select2/select2.min.css">
         <!-- AdminLTE Skins. Choose a skin from the css/skins
              folder instead of downloading all of them to reduce the load. -->
         <link rel="stylesheet" href="../asset/css/skins/_all-skins.min.css">
@@ -24,7 +24,7 @@
     <body class="hold-transition skin-<?php echo $_SESSION['skin']; ?> layout-top-nav">
         <div class="wrapper">
             <?php
-            include('../asset/includes/header_cashier.php');
+            include('../asset/includes/header.php');
             include('../asset/includes/dbcon.php');
             ?>
             <!-- Full Width Column -->
@@ -33,7 +33,7 @@
                     <!-- Content Header (Page header) -->
                     <section class="content-header">
                         <h1>
-                            <a class="btn btn-lg btn-twitter" href="home_cashier.php">Back</a>
+                            <a class="btn btn-lg btn-twitter" href="home.php">Back</a>
 
                         </h1>
                         <ol class="breadcrumb">
@@ -51,7 +51,7 @@
                                 <div class="box box-primary">
 
                                     <div class="box-header">
-                                        <h3 class="box-title">Organization Credit List</h3>
+                                        <h3 class="box-title">Supplier List</h3>
                                     </div><!-- /.box-header -->
                                     <div class="box-body">
                                         <table id="example1" class="table table-bordered table-striped">
@@ -86,34 +86,37 @@
                                                             <div class="modal-header">
                                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                     <span aria-hidden="true">×</span></button>
-                                                                <h4 class="modal-title">View Organization in Details</h4>
+                                                                <h4 class="modal-title">Update Organization Details</h4>
                                                             </div>
                                                             <div class="modal-body">
                                                                 <form class="form-horizontal" method="post" action="Organization_update.php" enctype='multipart/form-data'>
 
                                                                     <div class="form-group">
                                                                         <label for="name"> Name</label>
-                                                                        <div class="input-group col-md-12"><input type="hidden" class="form-control" id="id" name="id" value="<?php echo $row['organ_id']; ?>" disabled>  
-                                                                            <input type="text" class="form-control" id="name" name="name" value="<?php echo $row['organ_name']; ?>" disabled>  
+                                                                        <div class="input-group col-md-12"><input type="hidden" class="form-control" id="id" name="id" value="<?php echo $row['organ_id']; ?>" required>  
+                                                                            <input type="text" class="form-control" id="name" name="name" value="<?php echo $row['organ_name']; ?>" required>  
                                                                         </div>
                                                                     </div> 
                                                                     <div class="form-group">
                                                                         <label for="date">Organization Address</label>
                                                                         <div class="input-group col-md-12">
-                                                                            <textarea class="form-control pull-right" id="date" name="address" placeholder="Organization Complete Address" disabled><?php echo $row['organ_address']; ?></textarea>
+                                                                            <textarea class="form-control pull-right" id="date" name="address" placeholder="Organization Complete Address" required><?php echo $row['organ_address']; ?></textarea>
                                                                         </div><!-- /.input group -->
                                                                     </div><!-- /.form group -->
                                                                     <div class="form-group">
                                                                         <label for="date">Organization Contact #</label>
                                                                         <div class="input-group col-md-12">
-                                                                            <input type="text" class="form-control pull-right" id="date" name="contact" placeholder="Contact # of Organization" value="<?php echo $row['organ_contact']; ?>" disabled>
+                                                                            <input type="text" class="form-control pull-right" id="date" name="contact" placeholder="Contact # of Organization" value="<?php echo $row['organ_contact']; ?>" required>
                                                                         </div><!-- /.input group -->
                                                                     </div><!-- /.form group -->    
 
 
 
                                                             </div><hr>
-                                                            
+                                                            <div class="modal-footer">
+                                                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                            </div>
                                                             </form>
                                                         </div>
 
@@ -138,7 +141,48 @@
 
 
                             </div><!-- /.row -->
-                             
+                            <div class="col-md-3">
+                                <div class="box box-primary">
+                                    <div class="box-header">
+                                        <h3 class="box-title">Add New Organization</h3>
+                                    </div>
+                                    <div class="box-body">
+                                        <!-- Date range -->
+                                        <form method="post" action="Organization_add.php" enctype="multipart/form-data">
+
+                                            <div class="form-group">
+                                                <label for="date">Organization Name</label>
+                                                <div class="input-group col-md-12">
+                                                    <input type="text" class="form-control pull-right" id="date" name="name" placeholder="Organizationr Name" required>
+                                                </div><!-- /.input group -->
+                                            </div><!-- /.form group -->
+                                            <div class="form-group">
+                                                <label for="date">Organization Address</label>
+                                                <div class="input-group col-md-12">
+                                                    <textarea class="form-control pull-right" id="date" name="address" placeholder="Organization Complete Address" required></textarea>
+                                                </div><!-- /.input group -->
+                                            </div><!-- /.form group -->
+                                            <div class="form-group">
+                                                <label for="date">Organization Contact #</label>
+                                                <div class="input-group col-md-12">
+                                                    <input type="text" class="form-control pull-right" id="date" name="contact" placeholder="Contact # of Organization" required>
+                                                </div><!-- /.input group -->
+                                            </div><!-- /.form group -->    
+
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <button class="btn btn-twitter" id="daterange-btn" name="">
+                                                        Save
+                                                    </button>
+                                                    <button class="btn" id="daterange-btn">
+                                                        Clear
+                                                    </button>
+                                                </div>
+                                            </div><!-- /.form group -->
+                                        </form>	
+                                    </div><!-- /.box-body -->
+                                </div><!-- /.box -->
+                            </div><!-- /.col (right) -->
 
                     </section><!-- /.content -->
                 </div><!-- /.container -->
@@ -147,20 +191,20 @@
         </div><!-- ./wrapper -->
 
         <!-- jQuery 2.1.4 -->
-        <script src="../asset/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+        <script src="../plugins/jQuery/jQuery-2.1.4.min.js"></script>
         <!-- Bootstrap 3.3.5 -->
-        <script src="../asset/bootstrap/js/bootstrap.min.js"></script>
-        <script src="../asset/plugins/select2/select2.full.min.js"></script>
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
+        <script src="../plugins/select2/select2.full.min.js"></script>
         <!-- SlimScroll -->
-        <script src="../asset/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <script src="../plugins/slimScroll/jquery.slimscroll.min.js"></script>
         <!-- FastClick -->
-        <script src="../asset/plugins/fastclick/fastclick.min.js"></script>
+        <script src="../plugins/fastclick/fastclick.min.js"></script>
         <!-- AdminLTE App -->
         <script src="../asset/js/app.min.js"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="../asset/js/demo.js"></script>
-        <script src="../asset/plugins/datatables/jquery.dataTables.min.js"></script>
-        <script src="../asset/plugins/datatables/dataTables.bootstrap.min.js"></script>
+        <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>
 
         <script>
             $(function () {
