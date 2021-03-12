@@ -30,14 +30,14 @@ endif;
   <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
   <body class="hold-transition skin-<?php echo $_SESSION['skin'];?> layout-top-nav">
     <div class="wrapper">
-      <?php include('../asset/includes/header.php');?>
+      <?php include('../asset/includes/header_pharmacist.php');?>
       <!-- Full Width Column -->
       <div class="content-wrapper">
         <div class="container">
           <!-- Content Header (Page header) -->
           <section class="content-header">
             <h1>
-              <a class="btn btn-lg btn-twitter" href="home_pharmacy_manager.php">Back</a>
+              <a class="btn btn-lg btn-twitter" href="home_stock_manager.php">Back</a>
               
             </h1>
             <ol class="breadcrumb">
@@ -48,9 +48,12 @@ endif;
 
           <!-- Main content -->
           <section class="content">
-          
+            <div class="row">
+	      <div class="col-md-4">
             
-            <div class="col-xs-18">
+            </div><!-- /.col (right) -->
+            
+            <div class="col-xs-15">
               <div class="box box-primary">
     
                 <div class="box-header">
@@ -61,7 +64,7 @@ endif;
                     <thead>
                       <tr>
                         <th>Medicine Name</th>
-                        <th>Qty</th>
+                        <th>Qty/per karton</th>
 		        <th>Date Delivered</th>
                       </tr>
                     </thead>
@@ -85,7 +88,7 @@ endif;
                     <tfoot>
                       <tr>
                         <th>Medicine Name</th>
-                        <th>Qty</th>    
+                        <th>Qty/per karton</th>    
                         <th>Date Delivered</th>
                         
                       </tr>					  

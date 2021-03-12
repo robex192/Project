@@ -9,12 +9,11 @@ endif;
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Customer | <?php include('../asset/includes/title.php');?></title>
-    <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../asset/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="../plugins/datatables/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="../asset/plugins/datatables/dataTables.bootstrap.css">
     <link rel="stylesheet" href="../asset/css/AdminLTE.min.css">
     <link rel="stylesheet" href="../plugins/select2/select2.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -27,7 +26,7 @@ endif;
   <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
   <body class="hold-transition skin-<?php echo $_SESSION['skin'];?> layout-top-nav">
     <div class="wrapper">
-      <?php include('../asset/includes/header.php');
+      <?php include('../asset/includes/header_stock_manager.php');
       include('../asset/includes/dbcon.php');
       ?>
       <!-- Full Width Column -->
@@ -36,7 +35,7 @@ endif;
           <!-- Content Header (Page header) -->
           <section class="content-header">
             <h1>
-              <a class="btn btn-lg btn-warning" href="home.php">Back</a>
+              <a class="btn btn-lg btn-warning" href="home_stock_manager.php">Back</a>
               
             </h1>
             <ol class="breadcrumb">
@@ -181,20 +180,20 @@ endif;
     </div><!-- ./wrapper -->
 
     <!-- jQuery 2.1.4 -->
-    <script src="../plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <script src="../asset/plugins/jQuery/jQuery-2.1.4.min.js"></script>
     <!-- Bootstrap 3.3.5 -->
-    <script src="../bootstrap/js/bootstrap.min.js"></script>
-    <script src="../plugins/select2/select2.full.min.js"></script>
+    <script src="../asset/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../asset/plugins/select2/select2.full.min.js"></script>
     <!-- SlimScroll -->
-    <script src="../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <script src="../asset/plugins/slimScroll/jquery.slimscroll.min.js"></script>
     <!-- FastClick -->
-    <script src="../plugins/fastclick/fastclick.min.js"></script>
+    <script src="../asset/plugins/fastclick/fastclick.min.js"></script>
     <!-- AdminLTE App -->
     <script src="../asset/js/app.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../asset/js/demo.js"></script>
-    <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
-    <script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>
+    <script src="../asset/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="../asset/plugins/datatables/dataTables.bootstrap.min.js"></script>
     
     <script>
       $(function () {

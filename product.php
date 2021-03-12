@@ -13,9 +13,9 @@ endif;
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <!-- Bootstrap 3.3.5 -->
-        <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../asset/bootstrap/css/bootstrap.min.css">
         <!-- Font Awesome -->
-        <link rel="stylesheet" href="../plugins/datatables/dataTables.bootstrap.css">
+        <link rel="stylesheet" href="../asset/plugins/datatables/dataTables.bootstrap.css">
         <link rel="stylesheet" href="../asset/css/AdminLTE.min.css">
         <!-- AdminLTE Skins. Choose a skin from the css/skins
              folder instead of downloading all of them to reduce the load. -->
@@ -27,15 +27,15 @@ endif;
     <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
     <body class="hold-transition skin-<?php echo $_SESSION['skin']; ?> layout-top-nav">
         <div class="wrapper">
-<?php include('../asset/includes/header.php'); ?>
+<?php include('../asset/includes/header_stock_manager.php'); ?>
             <!-- Full Width Column -->
             <div class="content-wrapper">
                 <div class="container">
                     <!-- Content Header (Page header) -->
                     <section class="content-header">
                         <h1>
-                            <a class="btn btn-lg btn-twitter" href="home.php">Back</a>
-                            <a class="btn btn-lg btn-twitter" href="#add" data-target="#add" data-toggle="modal" style="color:#fff;" class="small-box-footer"><i class="glyphicon glyphicon-plus text-blue"></i></a>
+                            <a class="btn btn-lg btn-twitter" href="home_stock_manager.php">Back</a>
+                           
                         </h1>
                         <ol class="breadcrumb">
                             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -156,7 +156,7 @@ endif;
                                                     <th>Medicine Code</th>
                                                     <th>Medicine Name</th>
                                                     <th>Medicine Description</th>
-                                                    <th>Qty</th>
+                                                    <th>Qty/per kartaon</th>
                                                     <th>Price</th>
 
 
@@ -253,19 +253,19 @@ endif;
         </div>
         <!--end of modal--> 
         <!-- jQuery 2.1.4 -->
-        <script src="../plugins/jQuery/jQuery-2.1.4.min.js"></script>
+        <script src="../asset/plugins/jQuery/jQuery-2.1.4.min.js"></script>
         <!-- Bootstrap 3.3.5 -->
-        <script src="../bootstrap/js/bootstrap.min.js"></script>
+        <script src="../asset/bootstrap/js/bootstrap.min.js"></script>
         <!-- SlimScroll -->
-        <script src="../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <script src="../asset/plugins/slimScroll/jquery.slimscroll.min.js"></script>
         <!-- FastClick -->
-        <script src="../plugins/fastclick/fastclick.min.js"></script>
+        <script src="../asset/plugins/fastclick/fastclick.min.js"></script>
         <!-- AdminLTE App -->
         <script src="../asset/js/app.min.js"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="../asset/js/demo.js"></script>
-        <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
-        <script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>
+        <script src="../asset/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="../asset/plugins/datatables/dataTables.bootstrap.min.js"></script>
 
         <script>
             $(function () {
