@@ -5,7 +5,7 @@ include('../asset/includes/dbcon.php');
 
 	$id = $_POST['id'];
 	$reorder = $_POST['reorder'];
-	date_default_timezone_set('Africa/Addis_ababa');
+	date_default_timezone_set('Africa/Addis_Aababa');
 	$date = date("Y-m-d");
 
 			mysqli_query($con,"INSERT INTO purchase_request(medicine_id,branch_id,medicine_qty,request_date,purchase_status)

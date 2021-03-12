@@ -16,11 +16,11 @@ endif;
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <!-- Bootstrap 3.3.5 -->
-        <link rel="stylesheet" href="../asset/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
         <!-- Font Awesome -->
-        <link rel="stylesheet" href="..asset/plugins/datatables/dataTables.bootstrap.css">
+        <link rel="stylesheet" href="../plugins/datatables/dataTables.bootstrap.css">
 
-        <link rel="stylesheet" href="..asset/plugins/select2/select2.min.css">
+        <link rel="stylesheet" href="../plugins/select2/select2.min.css">
         <!-- AdminLTE Skins. Choose a skin from the css/skins
              folder instead of downloading all of them to reduce the load. -->
 
@@ -229,20 +229,20 @@ endif;
         </div><!-- ./wrapper -->
 
         <!-- jQuery 2.1.4 -->
-        <script src="../asset/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+        <script src="../plugins/jQuery/jQuery-2.1.4.min.js"></script>
         <!-- Bootstrap 3.3.5 -->
-        <script src="../asset/bootstrap/js/bootstrap.min.js"></script>
-        <script src="../asset/plugins/select2/select2.full.min.js"></script>
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
+        <script src="../plugins/select2/select2.full.min.js"></script>
         <!-- SlimScroll -->
-        <script src="../asset/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <script src="../plugins/slimScroll/jquery.slimscroll.min.js"></script>
         <!-- FastClick -->
-        <script src="../asset/plugins/fastclick/fastclick.min.js"></script>
+        <script src="../plugins/fastclick/fastclick.min.js"></script>
         <!-- AdminLTE App -->
         <script src="../asset/js/app.min.js"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="../asset/js/demo.js"></script>
-        <script src="../asset/plugins/datatables/jquery.dataTables.min.js"></script>
-        <script src="../asset/plugins/datatables/dataTables.bootstrap.min.js"></script>
+        <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>
 
         <script>
             $(function () {

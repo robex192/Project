@@ -6,7 +6,6 @@ endif;
 include('../asset/includes/dbcon.php');
 	$id = $_POST['id'];
 	$name =$_POST['medicine_name'];
-	$name =$_POST['name'];
 	$price = $_POST['medicine_price'];
 	$reorder = $_POST['reorder'];
 	$category = $_POST['category'];
@@ -46,8 +45,8 @@ include('../asset/includes/dbcon.php');
 			
 			}
 			
-	mysqli_query($con,"update product set medicine_name='$name',medicine_price='$price',
-	reorder='$reorder',user_id='$name',cat_id='$category',medicine_pic='$pic',serial='$serial',medicine_desc='$desc' where medicine_id='$id'")or die(mysqli_error($con));
+	mysqli_query($con,"update product set medicine_name='$name',prod_price='$price',
+	reorder='$reorder',cat_id='$category',medicine_pic='$pic',serial='$serial',medicine_desc='$desc' where medicine_id='$id'")or die(mysqli_error($con));
 	
 	echo "<script type='text/javascript'>alert('Successfully updated product details!');</script>";
 	echo "<script>document.location='product.php'</script>";  

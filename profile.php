@@ -26,7 +26,7 @@ endif;
   <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
   <body class="hold-transition skin-<?php echo $_SESSION['skin'];?> layout-top-nav">
     <div class="wrapper">
-      <?php include('../asset/includes/header_pharmacist.php');
+      <?php include('../asset/includes/header_pharmacy_manager.php');
       include('../asset/includes/dbcon.php');
       ?>
       <!-- Full Width Column -->
@@ -35,11 +35,11 @@ endif;
           <!-- Content Header (Page header) -->
           <section class="content-header">
             <h1>
-              <a class="btn btn-lg btn-twitter" href="home_pharmacist.php">Back</a>
+              <a class="btn btn-lg btn-twitter" href="home_pharmacy_manager.php">Back</a>
               
             </h1>
             <ol class="breadcrumb">
-              <li><a href="home_pharmacist.php"><i class="fa fa-dashboard"></i> Home</a></li>
+              <li><a href="home_pharmacy_manager.php"><i class="fa fa-dashboard"></i> Home</a></li>
               <li class="active">Account Details</li>
             </ol>
           </section>
@@ -69,7 +69,7 @@ endif;
 				  <div class="form-group">
                     <label for="date">User Role</label>
                     <div class="input-group col-md-12">
-                      <input type="text" class="form-control pull-right" value="<?php echo $row['user_role'];?>" name="user_role" placeholder="Username"  >
+                      <input type="text" class="form-control pull-right" value="<?php echo $row['user_role'];?>" name="user_role" placeholder="Username" >
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->
 				  <div class="form-group">

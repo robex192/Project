@@ -47,7 +47,7 @@ endif;
     <body class="hold-transition skin-<?php echo $_SESSION['skin']; ?> layout-top-nav">
         <div class="wrapper">
             <?php
-            include('../asset/includes/header_pharmacist.php');
+            include('../asset/includes/header.php');
             include('../asset/includes/dbcon.php');
             ?>
             <!-- Full Width Column -->
@@ -78,7 +78,7 @@ endif;
                                         <h5><b>Product Inventory as of today, <?php echo date("M d, Y h:i a"); ?></b></h5>
 
                                         <a class = "btn btn-success btn-print" href = "" onclick = "window.print()"><i class ="glyphicon glyphicon-print"></i> Print</a>
-                                        <a class = "btn btn-primary btn-print" href = "home_pharmacist.php"><i class ="glyphicon glyphicon-arrow-left"></i> Back to Homepage</a>   
+                                        <a class = "btn btn-primary btn-print" href = "home_pharmacy_manager.php"><i class ="glyphicon glyphicon-arrow-left"></i> Back to Homepage</a>   
 
                                         <table class="table table-bordered table-striped">
                                             <thead>
@@ -123,7 +123,7 @@ endif;
                                                     <th colspan="5">Total</th>
 
 
-                                                    <th colspan="2">birr<?php echo number_format($grand, 2); ?></th>
+                                                    <th colspan="2">P<?php echo number_format($grand, 2); ?></th>
 
 
                                                 </tr>	
@@ -145,7 +145,7 @@ endif;
                                                 $row = mysqli_fetch_array($query);
                                                 ?>                      
                                                 <tr>
-                                                    <th><?php echo $row['user_name']; ?></th>
+                                                    <th><?php echo $row['name']; ?></th>
                                                     <th></th>
                                                     <th></th>
                                                     <th></th>

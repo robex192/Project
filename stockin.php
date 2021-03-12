@@ -30,14 +30,14 @@ endif;
   <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
   <body class="hold-transition skin-<?php echo $_SESSION['skin'];?> layout-top-nav">
     <div class="wrapper">
-      <?php include('../asset/includes/header_pharmacist.php');?>
+      <?php include('../asset/includes/header.php');?>
       <!-- Full Width Column -->
       <div class="content-wrapper">
         <div class="container">
           <!-- Content Header (Page header) -->
           <section class="content-header">
             <h1>
-              <a class="btn btn-lg btn-twitter" href="home_pharmacist.php">Back</a>
+              <a class="btn btn-lg btn-twitter" href="home_pharmacy_manager.php">Back</a>
               
             </h1>
             <ol class="breadcrumb">
@@ -48,54 +48,9 @@ endif;
 
           <!-- Main content -->
           <section class="content">
-            <div class="row">
-	      <div class="col-md-4">
-              <div class="box box-primary">
-                <div class="box-header">
-                  <h3 class="box-title">Stockin Products</h3>
-                </div>
-                <div class="box-body">
-                  <!-- Date range -->
-                  <form method="post" action="stockin_add.php" enctype="multipart/form-data">
-  
-                  <div class="form-group">
-                    <label for="date">Product Name</label>
-                    <div class="input-group col-md-12">
-                      <select class="form-control select2" name="medicine_name" required>
-                      <?php
-			 include('../asset/includes/dbcon.php');
-				$query2=mysqli_query($con,"select * from product where branch_id='$branch' order by medicine_name")or die(mysqli_error());
-				  while($row=mysqli_fetch_array($query2)){
-		      ?>
-				    <option value="<?php echo $row['medicine_id'];?>"><?php echo $row['medicine_name'];?></option>
-		      <?php }?>
-                    </select>
-                    </div><!-- /.input group -->
-                  </div><!-- /.form group -->
-		  
-                  <div class="form-group">
-                    <label for="date">Quantity</label>
-                    <div class="input-group col-md-12">
-                      <input type="text" class="form-control pull-right" id="date" name="medicine_qty" placeholder="Quantity" required>
-                    </div><!-- /.input group -->
-                  </div><!-- /.form group -->
-                
-                  <div class="form-group">
-                    <div class="input-group">
-                      <button class="btn btn-primary" id="daterange-btn" name="">
-                        Save
-                      </button>
-					  <button class="btn" id="daterange-btn">
-                        Clear
-                      </button>
-                    </div>
-                  </div><!-- /.form group -->
-				</form>	
-                </div><!-- /.box-body -->
-              </div><!-- /.box -->
-            </div><!-- /.col (right) -->
+          
             
-            <div class="col-xs-8">
+            <div class="col-xs-18">
               <div class="box box-primary">
     
                 <div class="box-header">

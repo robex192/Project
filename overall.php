@@ -49,7 +49,7 @@ endif;
     <body class="hold-transition skin-blue layout-top-nav">
         <div class="wrapper">
             <?php
-            include('../asset/includes/header_pharmacist.php');
+            include('../asset/includes/header.php');
             include('../asset/includes/dbcon.php');
             ?>
             <!-- Full Width Column -->
@@ -58,7 +58,7 @@ endif;
                     <!-- Content Header (Page header) -->
                     <section class="content-header">
                         <h1>
-                            <a class="btn btn-lg btn-warning" href="home_pharmacist.php">Back</a>
+                            <a class="btn btn-lg btn-warning" href="home.php">Back</a>
 
                         </h1>
                         <ol class="breadcrumb">
@@ -150,7 +150,7 @@ endif;
                                                         $mat += $row['amount'];
                                                         ?>
                                                         <tr>
-                                                            <td style="padding-left:50px"> <?php echo $row['material'] . "(" . $row['medicine_qty'] . ")"; ?></td>
+                                                            <td style="padding-left:50px"> <?php echo $row['material'] . "(" . $row['qty'] . ")"; ?></td>
                                                             <td style="text-align:right"> <?php echo $row['amount']; ?></td>
                                                         </tr>
 

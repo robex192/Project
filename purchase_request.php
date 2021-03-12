@@ -12,23 +12,23 @@ endif;
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Home | <?php include('../asset/includes/title.php');?></title>
-       <link rel="stylesheet" href="../asset/bootstrap/css/bootstrap.min.css">
+       <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <!-- daterange picker -->
-  <link rel="stylesheet" href="../asset/plugins/daterangepicker/daterangepicker-bs3.css">
+  <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker-bs3.css">
   <!-- bootstrap datepicker -->
-  <link rel="stylesheet" href="../asset/plugins/datepicker/datepicker3.css">
+  <link rel="stylesheet" href="../plugins/datepicker/datepicker3.css">
   <!-- iCheck for checkboxes and radio inputs -->
-  <link rel="stylesheet" href="../asset/plugins/iCheck/all.css">
+  <link rel="stylesheet" href="../plugins/iCheck/all.css">
   <!-- Bootstrap Color Picker -->
-  <link rel="stylesheet" href="../asset/plugins/colorpicker/bootstrap-colorpicker.min.css">
+  <link rel="stylesheet" href="../plugins/colorpicker/bootstrap-colorpicker.min.css">
   <!-- Bootstrap time Picker -->
-  <link rel="stylesheet" href="../asset/plugins/timepicker/bootstrap-timepicker.min.css">
+  <link rel="stylesheet" href="../plugins/timepicker/bootstrap-timepicker.min.css">
   <!-- Select2 -->
-  <link rel="stylesheet" href="../asset/plugins/select2/select2.min.css">
+  <link rel="stylesheet" href="../plugins/select2/select2.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../asset/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -36,11 +36,11 @@ endif;
   <link rel="stylesheet" href="../asset/css/skins/_all-skins.min.css">
   <script type="text/javascript" src="../asset/js/jquery.min.js"></script>
 <script type="text/javascript" src="../asset/js/moment.min.js"></script>
-<link rel="stylesheet" type="text/css" href="../asset/css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="../dist/css/bootstrap.css" />
  
 <!-- Include Date Range Picker -->
-<script type="text/javascript" src="../asset/plugins/daterangepicker/daterangepicker.js"></script>
-<link rel="stylesheet" type="text/css" href="../asset/plugins/daterangepicker/daterangepicker.css" />
+<script type="text/javascript" src="../plugins/daterangepicker/daterangepicker.js"></script>
+<link rel="stylesheet" type="text/css" href="../plugins/daterangepicker/daterangepicker.css" />
  
     <style type="text/css">
       h5,h6{
@@ -133,7 +133,7 @@ if (isset($_POST['display']))
                       <th>Medicine Code</th>
                       <th>Medicine Name</th>
                       <th>Quantity</th>
-                      <th>Organization</th>
+                      <th>Organization Name</th>
                       <th>Date Requested</th>
                     </tr>    
 <?php
@@ -184,7 +184,7 @@ if (isset($_POST['display']))
 				</form>	
                 </div><!-- /.box-body -->
                 <a class = "btn btn-success btn-print" href = "" onclick = "window.print()"><i class ="glyphicon glyphicon-print"></i> Print</a>
-                <a class = "btn btn-primary btn-print" href = "home_pharmacist.php"><i class ="glyphicon glyphicon-arrow-left"></i> Back to Reorder Page</a>
+                <a class = "btn btn-primary btn-print" href = "reorder.php"><i class ="glyphicon glyphicon-arrow-left"></i> Back to Reorder Page</a>
               </div><!-- /.box -->
             </div><!-- /.col (right) -->
            
@@ -197,30 +197,30 @@ if (isset($_POST['display']))
      
     </div><!-- ./wrapper -->
 	
-	<script src="../asset/plugins/jQuery/jQuery-2.2.0.min.js"></script>
+	<script src="../plugins/jQuery/jQuery-2.2.0.min.js"></script>
   <!-- Bootstrap 3.3.6 -->
-  <script src="../asset/bootstrap/js/bootstrap.min.js"></script>
+  <script src="../bootstrap/js/bootstrap.min.js"></script>
   <!-- Select2 -->
-  <script src="../asset/plugins/select2/select2.full.min.js"></script>
+  <script src="../plugins/select2/select2.full.min.js"></script>
   <!-- InputMask -->
-  <script src="../asset/plugins/input-mask/jquery.inputmask.js"></script>
-  <script src="../asset/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
-  <script src="../asset/plugins/input-mask/jquery.inputmask.extensions.js"></script>
+  <script src="../plugins/input-mask/jquery.inputmask.js"></script>
+  <script src="../plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+  <script src="../plugins/input-mask/jquery.inputmask.extensions.js"></script>
   <!-- date-range-picker -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-  <script src="../asset/plugins/daterangepicker/daterangepicker.js"></script>
+  <script src="../plugins/daterangepicker/daterangepicker.js"></script>
   <!-- bootstrap datepicker -->
-  <script src="../asset/plugins/datepicker/bootstrap-datepicker.js"></script>
+  <script src="../plugins/datepicker/bootstrap-datepicker.js"></script>
   <!-- bootstrap color picker -->
-  <script src="../asset/plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
+  <script src="../plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
   <!-- bootstrap time picker -->
-  <script src="../asset/plugins/timepicker/bootstrap-timepicker.min.js"></script>
+  <script src="../plugins/timepicker/bootstrap-timepicker.min.js"></script>
   <!-- SlimScroll 1.3.0 -->
-  <script src="../asset/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+  <script src="../plugins/slimScroll/jquery.slimscroll.min.js"></script>
   <!-- iCheck 1.0.1 -->
-  <script src="../asset/plugins/iCheck/icheck.min.js"></script>
+  <script src="../plugins/iCheck/icheck.min.js"></script>
   <!-- FastClick -->
-  <script src="../asset/plugins/fastclick/fastclick.js"></script>
+  <script src="../plugins/fastclick/fastclick.js"></script>
   <!-- AdminLTE App -->
   <script src="../asset/js/app.min.js"></script>
   <!-- AdminLTE for demo purposes -->

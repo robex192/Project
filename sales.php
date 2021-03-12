@@ -133,7 +133,7 @@ endif;
                                 <h5><b>Cash Sales Report as of <?php echo date("M d, Y", strtotime($start)) . " to " . date("M d, Y", strtotime($end)); ?></b></h5>
 
                                 <a class = "btn btn-success btn-print" href = "" onclick = "window.print()"><i class ="glyphicon glyphicon-print"></i> Print</a>
-                                <a class = "btn btn-primary btn-print" href = "home_pharmacist.php"><i class ="glyphicon glyphicon-arrow-left"></i> Back to Homepage</a>   
+                                <a class = "btn btn-primary btn-print" href = "home_pharamacy_manager.php"><i class ="glyphicon glyphicon-arrow-left"></i> Back to Homepage</a>   
 
 
                                 <table id="example1" class="table table-bordered table-striped">

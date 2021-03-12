@@ -3,7 +3,7 @@
                       <tr>
                         <th>Qty</th>
 						<th>Unit</th>
-                        <th>Medicine Name</th>
+                        <th>Product Name</th>
 						<th>Price</th>
 						<th>Total</th>
                         <th>Action</th>
@@ -11,20 +11,20 @@
                     </thead>
                     <tbody>
 <?php
-		include('../asset/includes/dbcon.php');
+		include('../dist/includes/dbcon.php');
 		$query=mysqli_query($con,"select * from temp_trans natural join product")or die(mysqli_error());
 			$grand=0;
 		while($row=mysqli_fetch_array($query)){
 				$id=$row['temp_trans_id'];
-				$total= $row['medicine_qty']*$row['medicine_price'];
+				$total= $row['qty']*$row['price'];
 				$grand=$grand+$total;
 		
 ?>
                       <tr >
-						<td class="show"><?php echo $row['medicine_qty'];?></td>
+						<td class="show"><?php echo $row['qty'];?></td>
 						<td><?php echo $row['prod_unit'];?></td>
-                        <td class="record"><?php echo $row['medicine_name'];?></td>
-						<td><?php echo $row['medicine_price'];?></td>
+                        <td class="record"><?php echo $row['prod_name'];?></td>
+						<td><?php echo $row['price'];?></td>
 						<td style="text-align:right"><?php echo number_format($total,2);?></td>
                         <td>
 							

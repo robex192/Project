@@ -146,14 +146,14 @@ $branch=$_SESSION['branch'];
 			$grand=0;
 		while($row=mysqli_fetch_array($query)){
 				//$id=$row['temp_trans_id'];
-				$total= $row['medicine_qty']*$row['price'];
+				$total= $row['medicine_qty']*$row['medicine_price'];
 				$grand=$grand+$total;
         
 ?>
                       <tr>
-            						<td><?php echo $row['medicine_qty'];?></td>
+            						<td><?php echo $row['qty'];?></td>
                         <td>pc/s</td>
-                        <td class="record"><?php echo $row['medicine_name'];?></td>
+                        <td class="record"><?php echo $row['meidicine_name'];?></td>
             						<td><?php echo number_format($row['medicine_price'],2);?></td>
             						<td style="text-align:right"><?php echo number_format($total,2);?></td>
                                     
@@ -221,7 +221,7 @@ $branch=$_SESSION['branch'];
 				</form>	
                 </div><!-- /.box-body -->
                 <a class = "btn btn-success btn-print" href = "" onclick = "window.print()"><i class ="glyphicon glyphicon-print"></i> Print</a>
-                <a class = "btn btn-primary btn-print" href = "home_pharmacist.php"><i class ="glyphicon glyphicon-arrow-left"></i> Back to Homepage</a>
+                <a class = "btn btn-primary btn-print" href = "home.php"><i class ="glyphicon glyphicon-arrow-left"></i> Back to Homepage</a>
               </div><!-- /.box -->
             </div><!-- /.col (right) -->
            

@@ -13,7 +13,7 @@ $id = $_POST['pr_id'];
 $result=mysqli_query($con,"DELETE FROM purchase_request WHERE pr_id ='$id'")
 	or die(mysqli_error());
 
-			date_default_timezone_set("Africa/Addis_ababa"); 
+			date_default_timezone_set("Africa/Addis_Ababa"); 
 			$date = date("Y-m-d H:i:s");
 	
 	$remarks="deleted $qty $name from purchase request";
