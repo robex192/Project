@@ -46,7 +46,8 @@ if (isset($_POST["import"])) {
         <title>Category | <?php include('../asset/includes/title.php'); ?></title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-          <link rel="stylesheet" href="../asset/bootstrap/css/bootstrap.min.css">
+        <!-- Bootstrap 3.3.5 -->
+             <link rel="stylesheet" href="../asset/bootstrap/css/bootstrap.min.css">
         <!-- Font Awesome -->
         <link rel="stylesheet" href="../asset/plugins/datatables/dataTables.bootstrap.css">
         <link rel="stylesheet" href="../asset/css/AdminLTE.min.css">
@@ -234,12 +235,9 @@ if (isset($_POST["import"])) {
         </div><!-- ./wrapper -->
 
         <!-- jQuery 2.1.4 -->
-        <!-- jQuery 2.1.4 -->
         <script src="../asset/plugins/jQuery/jQuery-2.1.4.min.js"></script>
-        <script src="../asset/js/jquery.min.js"></script>
         <!-- Bootstrap 3.3.5 -->
         <script src="../asset/bootstrap/js/bootstrap.min.js"></script>
-        <script src="../asset/plugins/select2/select2.full.min.js"></script>
         <!-- SlimScroll -->
         <script src="../asset/plugins/slimScroll/jquery.slimscroll.min.js"></script>
         <!-- FastClick -->
@@ -247,7 +245,7 @@ if (isset($_POST["import"])) {
         <!-- AdminLTE App -->
         <script src="../asset/js/app.min.js"></script>
         <!-- AdminLTE for demo purposes -->
-        <script src="../asset/asset/js/demo.js"></script>
+        <script src="../asset/js/demo.js"></script>
         <script src="../asset/plugins/datatables/jquery.dataTables.min.js"></script>
         <script src="../asset/plugins/datatables/dataTables.bootstrap.min.js"></script>
 

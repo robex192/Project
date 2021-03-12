@@ -15,11 +15,11 @@ endif;
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../asset/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="../plugins/datatables/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="../asset/plugins/datatables/dataTables.bootstrap.css">
     <link rel="stylesheet" href="../asset/css/AdminLTE.min.css">
-    <link rel="stylesheet" href="../plugins/select2/select2.min.css">
+    <link rel="stylesheet" href="../asset/plugins/select2/select2.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="../asset/css/skins/_all-skins.min.css">
@@ -31,14 +31,14 @@ javascript:window.history.forward(1);
   <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
   <body class="hold-transition skin-<?php echo $_SESSION['skin'];?> layout-top-nav" onload="myFunction()">
     <div class="wrapper">
-      <?php include('../asset/includes/header.php');?>
+      <?php include('../asset/includes/header_pharmacist.php');?>
       <!-- Full Width Column -->
       <div class="content-wrapper">
         <div class="container">
           <!-- Content Header (Page header) -->
           <section class="content-header">
             <h1>
-              <a class="btn btn-lg btn-warning" href="home.php">Back</a>
+              <a class="btn btn-lg btn-twitter" href="home_pharmacist.php">Back</a>
               
             </h1>
             <ol class="breadcrumb">
@@ -62,17 +62,18 @@ javascript:window.history.forward(1);
 					
 					 <div class="col-md-6">
 						  <div class="form-group">
-							<label for="date">Product Name</label>
+							<label for="date">Medicine Name</label>
 							 
 								<select class="form-control select2" name="medicine_name" tabindex="1" autofocus required>
 								<?php
-                                  $branch=$_SESSION['branch'];
-                                  $cid=$_REQUEST['cid'];
+                                     $branch=$_SESSION['branch'];
+                                      $cid=$_REQUEST['cid'];
 								  include('../asset/includes/dbcon.php');
-								  $query2=mysqli_query($con,"select * from product where branch_id='$branch' order by medicine_name")or die(mysqli_error());
-								  while($row=mysqli_fetch_array($query2)){
-								  ?>
-								<option value="<?php echo $row['medicine_id'];?>"><?php echo $row['medicine_name']." Available(".$row['medicine_qty'].")";?></option>
+									//$query2=mysqli_query($con,"select * from product order by medicine_name")or die(mysqli_error());
+									$query2=mysqli_query($con,"select * from product where branch_id='$branch' order by medicine_name")or die(mysqli_error());
+									    while($row=mysqli_fetch_array($query2)){
+								?>
+										<option value="<?php echo $row['medicine_id'];?>"><?php echo $row['medicine_name']." Available(".$row['medicine_qty'].")";?></option>
 								  <?php }?>
 								</select>
 						    <input type="hidden" class="form-control" name="cid" value="<?php echo $cid;?>" required>   
@@ -90,24 +91,23 @@ javascript:window.history.forward(1);
 						<div class="form-group">
 							<label for="date"></label>
 							<div class="input-group">
-								<button class="btn btn-lg btn-primary" type="submit" tabindex="3" name="addtocart">+</button>
+								<button class="btn btn-lg btn-twitter" type="submit" tabindex="3" name="addtocart">+</button>
 							</div>
 						</div>	
 					</form>	
 					</div>
 					<div class="col-md-12">
-<?php 
-$queryb=mysqli_query($con,"select balance from customer where cust_id='$cid'")or die(mysqli_error());
-     $rowb=mysqli_fetch_array($queryb);
-        $balance=$rowb['balance'];
+                <?php 
+                  $queryb=mysqli_query($con,"select balance from customer where cust_id='$cid'")or die(mysqli_error());
+                   $rowb=mysqli_fetch_array($queryb);
+                   $balance=$rowb['balance'];
 
-        if ($balance>0) $disabled="disabled=true";else{$disabled="";}
-?>
+                       if ($balance>0) $disabled="disabled=true";else{$disabled="";}
+                     ?>
                   <table class="table table-bordered table-striped">
                     <thead>
                       <tr>
-                        <th>Medicine Qty</th>
-						       
+                        <th>Medicine Qty</th>     
                         <th>Medicine Name</th>
 						 <th>Price</th>
 						 <th>Total</th>
@@ -115,10 +115,10 @@ $queryb=mysqli_query($con,"select balance from customer where cust_id='$cid'")or
                       </tr>
                     </thead>
                     <tbody>
-<?php
+          <?php
 		
 		$query=mysqli_query($con,"select * from temp_trans natural join product where branch_id='$branch'")or die(mysqli_error());
-			$grand=0;
+		$grand=0;
 		while($row=mysqli_fetch_array($query)){
 				$id=$row['temp_trans_id'];
 				$total= $row['medicine_qty']*$row['medicine_price'];
@@ -132,16 +132,16 @@ $queryb=mysqli_query($con,"select balance from customer where cust_id='$cid'")or
 						<td><?php echo number_format($total,2);?></td>
                         <td>
 							
-							<a href="#updateordinance<?php echo $row['temp_trans_id'];?>" data-target="#updateordinance<?php echo $row['temp_trans_id'];?>" data-toggle="modal" style="color:#fff;" class="small-box-footer"><i class="glyphicon glyphicon-edit text-blue"></i></a>
+			  <a href="#updateordinance<?php echo $row['temp_trans_id'];?>" data-target="#updateordinance<?php echo $row['temp_trans_id'];?>" data-toggle="modal" style="color:#fff;" class="small-box-footer"><i class="glyphicon glyphicon-edit text-blue"></i></a>
 
-                           <a href="#delete<?php echo $row['temp_trans_id'];?>" data-target="#delete<?php echo $row['temp_trans_id'];?>" data-toggle="modal" style="color:#fff;" class="small-box-footer"><i class="glyphicon glyphicon-trash text-red"></i></a>
+              <a href="#delete<?php echo $row['temp_trans_id'];?>" data-target="#delete<?php echo $row['temp_trans_id'];?>" data-toggle="modal" style="color:#fff;" class="small-box-footer"><i class="glyphicon glyphicon-trash text-red"></i></a>
               
 						</td>
                       </tr>
 					  <div id="updateordinance<?php echo $row['temp_trans_id'];?>" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-	<div class="modal-dialog">
-	  <div class="modal-content" style="height:auto">
-              <div class="modal-header">
+	                  <div class="modal-dialog">
+	                  <div class="modal-content" style="height:auto">
+                      <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">×</span></button>
                 <h4 class="modal-title">Update Sales Details</h4>
@@ -159,7 +159,7 @@ $queryb=mysqli_query($con,"select balance from customer where cust_id='$cid'")or
 				
               </div><br>
               <div class="modal-footer">
-		            <button type="submit" class="btn btn-primary">Save changes</button>
+		            <button type="submit" class="btn btn-twitter">Save changes</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               </div>
 			  </form>
@@ -184,7 +184,7 @@ $queryb=mysqli_query($con,"select balance from customer where cust_id='$cid'")or
         
               </div><br>
               <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Delete</button>
+                <button type="submit" class="btn btn-twitter">Delete</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               </div>
         </form>
@@ -254,7 +254,7 @@ $queryb=mysqli_query($con,"select balance from customer where cust_id='$cid'")or
                
                   
                  
-                      <button class="btn btn-lg btn-block btn-primary" id="daterange-btn" name="cash" type="submit"  tabindex="7">
+                      <button class="btn btn-lg btn-block btn-twitter" id="daterange-btn" name="cash" type="submit"  tabindex="7">
                         Complete Sales
                       </button>
 					  <button class="btn btn-lg btn-block" id="daterange-btn" type="reset"  tabindex="8">
@@ -311,21 +311,21 @@ $queryb=mysqli_query($con,"select balance from customer where cust_id='$cid'")or
 	
 	<script type="text/javascript" src="autosum.js"></script>
     <!-- jQuery 2.1.4 -->
-    <script src="../plugins/jQuery/jQuery-2.1.4.min.js"></script>
-	<script src="../dist/js/jquery.min.js"></script>
+    <script src="..asset/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+	<script src="../asset/js/jquery.min.js"></script>
     <!-- Bootstrap 3.3.5 -->
-    <script src="../bootstrap/js/bootstrap.min.js"></script>
-    <script src="../plugins/select2/select2.full.min.js"></script>
+    <script src="..asset/bootstrap/js/bootstrap.min.js"></script>
+    <script src="..asset/plugins/select2/select2.full.min.js"></script>
     <!-- SlimScroll -->
-    <script src="../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <script src="..asset/plugins/slimScroll/jquery.slimscroll.min.js"></script>
     <!-- FastClick -->
-    <script src="../plugins/fastclick/fastclick.min.js"></script>
+    <script src="..asset/plugins/fastclick/fastclick.min.js"></script>
     <!-- AdminLTE App -->
-    <script src="../dist/js/app.min.js"></script>
+    <script src="../asset/js/app.min.js"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="../dist/js/demo.js"></script>
-    <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
-    <script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>
+    <script src="../asset/js/demo.js"></script>
+    <script src="..asset/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="..asset/plugins/datatables/dataTables.bootstrap.min.js"></script>
     
     <script>
       $(function () {

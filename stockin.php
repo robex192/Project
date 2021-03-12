@@ -30,14 +30,14 @@ endif;
   <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
   <body class="hold-transition skin-<?php echo $_SESSION['skin'];?> layout-top-nav">
     <div class="wrapper">
-      <?php include('../asset/includes/header.php');?>
+      <?php include('../asset/includes/header_pharmacist.php');?>
       <!-- Full Width Column -->
       <div class="content-wrapper">
         <div class="container">
           <!-- Content Header (Page header) -->
           <section class="content-header">
             <h1>
-              <a class="btn btn-lg btn-twitter" href="home.php">Back</a>
+              <a class="btn btn-lg btn-twitter" href="home_pharmacist.php">Back</a>
               
             </h1>
             <ol class="breadcrumb">

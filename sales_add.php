@@ -26,13 +26,13 @@ $sales_id = mysqli_insert_id($con);
 $_SESSION['sid'] = $sales_id;
 $query = mysqli_query($con, "select * from temp_trans where branch_id='$branch'")or die(mysqli_error($con));
 while ($row = mysqli_fetch_array($query)) {
-    $pid = $row['medicine_id'];
-    $qty = $row['medicine_qty'];
+    $medicine_id = $row['medicine_id'];
+    $medicine_qty = $row['medicine_qty'];
     $price = $row['medicine_price'];
 
 
-    mysqli_query($con, "INSERT INTO sales_details(meidicine_id,medicine_qty,meidicine_price,sales_id) VALUES('$pid','$qty','$price','$sales_id')")or die(mysqli_error($con));
-    mysqli_query($con, "UPDATE product SET prod_qty=prod_qty-'$qty' where prod_id='$pid' and branch_id='$branch'") or die(mysqli_error($con));
+    mysqli_query($con, "INSERT INTO sales_details(medicine_id,medicine_qty,medicine_price,sales_id) VALUES('$medicine_id','$medicine_qty','$medicine_price','$sales_id')")or die(mysqli_error($con));
+    mysqli_query($con, "UPDATE product SET medicine_qty=medicine_qty-'$medicine_qty' where medicine_id='$medicine_id' and branch_id='$branch'") or die(mysqli_error($con));
 }
 
 $query1 = mysqli_query($con, "SELECT or_no FROM payment NATURAL JOIN sales WHERE modeofpayment =  'cash' ORDER BY payment_id DESC LIMIT 0 , 1")or die(mysqli_error($con));

@@ -101,7 +101,7 @@ $branch=$_SESSION['branch'];
                   </table>
                   <h4 class="text-center">CUSTOMER’S UNDERTAKING AND RESPONSIBILITIES</h4>
 
-
+ 
 
  
                   <table class="table">
@@ -167,7 +167,7 @@ $branch=$_SESSION['branch'];
 				</form>	
                 </div><!-- /.box-body -->
                 <a class = "btn btn-success btn-print" href = "" onclick = "window.print()"><i class ="glyphicon glyphicon-print"></i> Print</a>
-                <a class = "btn btn-primary btn-print" href = "home.php"><i class ="glyphicon glyphicon-arrow-left"></i> Back to Homepage</a>
+                <a class = "btn btn-primary btn-print" href = "home_pharmacist.php"><i class ="glyphicon glyphicon-arrow-left"></i> Back to Homepage</a>
               </div><!-- /.box -->
             </div><!-- /.col (right) -->
            

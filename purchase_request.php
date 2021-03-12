@@ -171,7 +171,7 @@ if (isset($_POST['display']))
  
 ?>                      
                       <tr>
-                        <th><?php echo $row['user_name'];?></th>
+                        <th><?php echo $row['name'];?></th>
                         <th></th>
                         <th></th>
                         <th></th>
@@ -184,7 +184,7 @@ if (isset($_POST['display']))
 				</form>	
                 </div><!-- /.box-body -->
                 <a class = "btn btn-success btn-print" href = "" onclick = "window.print()"><i class ="glyphicon glyphicon-print"></i> Print</a>
-                <a class = "btn btn-primary btn-print" href = "home.php"><i class ="glyphicon glyphicon-arrow-left"></i> Back to Reorder Page</a>
+                <a class = "btn btn-primary btn-print" href = "home_pharmacist.php"><i class ="glyphicon glyphicon-arrow-left"></i> Back to Reorder Page</a>
               </div><!-- /.box -->
             </div><!-- /.col (right) -->
            

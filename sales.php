@@ -12,7 +12,7 @@ endif;
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Sales Report | <?php include('../asset/includes/title.php'); ?></title>
+        <title>Sales Report | <?php include('../dist/includes/title.php'); ?></title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <!-- Bootstrap 3.3.5 -->
@@ -71,7 +71,7 @@ endif;
     <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
     <body class="hold-transition skin-<?php echo $_SESSION['skin']; ?> layout-top-nav">
         <div class="wrapper">
-<?php include('../asset/includes/header.php'); ?>
+<?php include('../asset/includes/header_pharmacist.php'); ?>
             <!-- Full Width Column -->
             <div class="content-wrapper">
                 <div class="container">
@@ -133,7 +133,7 @@ endif;
                                 <h5><b>Cash Sales Report as of <?php echo date("M d, Y", strtotime($start)) . " to " . date("M d, Y", strtotime($end)); ?></b></h5>
 
                                 <a class = "btn btn-success btn-print" href = "" onclick = "window.print()"><i class ="glyphicon glyphicon-print"></i> Print</a>
-                                <a class = "btn btn-primary btn-print" href = "home.php"><i class ="glyphicon glyphicon-arrow-left"></i> Back to Homepage</a>   
+                                <a class = "btn btn-primary btn-print" href = "home_pharmacist.php"><i class ="glyphicon glyphicon-arrow-left"></i> Back to Homepage</a>   
 
 
                                 <table id="example1" class="table table-bordered table-striped">
@@ -212,7 +212,7 @@ endif;
                                     $row = mysqli_fetch_array($query);
                                     ?>                      
                                     <tr>
-                                        <th><?php echo $row['user_name']; ?></th>
+                                        <th><?php echo $row['name']; ?></th>
                                         <th></th>
                                         <th></th>
                                         <th></th>

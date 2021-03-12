@@ -15,9 +15,9 @@ endif;
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../asset/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="../plugins/datatables/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="../asset/plugins/datatables/dataTables.bootstrap.css">
     <link rel="stylesheet" href="../asset/css/AdminLTE.min.css">
     <link rel="stylesheet" href="../plugins/select2/select2.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -30,8 +30,8 @@ endif;
   <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
   <body class="hold-transition skin-<?php echo $_SESSION['skin'];?> layout-top-nav">
     <div class="wrapper">
-      <?php include('../asset/includes/header.php');
-      include('../asset/includes/dbcon.php');
+      <?php include('../asset/includes/header_pharmacist.php');
+            include('../asset/includes/dbcon.php');
       ?>
       <!-- Full Width Column -->
       <div class="content-wrapper">
@@ -39,7 +39,7 @@ endif;
           <!-- Content Header (Page header) -->
           <section class="content-header">
             <h1>
-              <a class="btn btn-lg btn-twitter" href="home.php">Back</a>
+              <a class="btn btn-lg btn-twitter" href="home_pharmacist.php">Back</a>
               
             </h1>
             <ol class="breadcrumb">
@@ -59,27 +59,28 @@ endif;
                 <div class="box-body">
                   <!-- Date range -->
                   <form method="post" action="customer_add.php" enctype="multipart/form-data" class="form-horizontal">
+				   <div class="col-md-6">  
+                      <div class="form-group">
+                        <label for="date" class="col-sm-13 control-label">First Name</label>
+                        <div class="input-group col-md-8">
+                          <input type="text" class="form-control pull-right" id="date" name="first" placeholder="Customer First Name" required>
+                        </div><!-- /.input group -->
+                      </div><!-- /.form group -->
+                    </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="date" class="col-sm-3 control-label">Last Name</label>
+                        <label for="date" class="col-sm-18 control-label">Last Name</label>
                         <div class="input-group col-sm-8">
                           <input type="text" class="form-control pull-right" id="date" name="last" placeholder="Customer Last Name" required>
                         </div><!-- /.input group -->
                       </div><!-- /.form group -->
                     </div>
                     
-                    <div class="col-md-6">  
-                      <div class="form-group">
-                        <label for="date" class="col-sm-3 control-label">First Name</label>
-                        <div class="input-group col-md-8">
-                          <input type="text" class="form-control pull-right" id="date" name="first" placeholder="Customer First Name" required>
-                        </div><!-- /.input group -->
-                      </div><!-- /.form group -->
-                    </div>
+                   
 
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="date" class="col-sm-3 control-label">Contact #</label>
+                        <label for="date" class="col-sm-13 control-label">Contact #</label>
                         <div class="input-group col-md-8">  
                           <input type="text" class="form-control pull-right" id="date" name="contact" placeholder="Contact Number" required>
                         </div>
@@ -88,7 +89,7 @@ endif;
                           
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="date" class="col-sm-3 control-label">Address</label>   
+                        <label for="date" class="col-sm-13 control-label">Address</label>   
                         <div class="input-group col-md-8">
                           <textarea class="form-control pull-right" id="date" name="address" placeholder="Complete Address" required></textarea>
                         </div>
@@ -106,7 +107,7 @@ endif;
           </form> 
 
                 
-        
+      
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
             </div>
@@ -124,12 +125,12 @@ endif;
                     <div class="input-group col-md-12">
                       <select class="form-control select2" style="width: 100%;" name="cid" required>
                       <?php
-                       include('../asset/includes/dbcon.php');
+                        include('../asset/includes/dbcon.php');
                         $query2=mysqli_query($con,"select * from customer where branch_id='$branch' order by cust_last, cust_first")or die(mysqli_error());
-                          while($row2=mysqli_fetch_array($query2)){
+                        while($row2=mysqli_fetch_array($query2)){
                       ?>
-            <option value="<?php echo $row2['cust_id'];?>"><?php echo $row2['cust_last'].", ".$row2['cust_first'];?></option>
-          <?php }?>
+                       <option value="<?php echo $row2['cust_id'];?>"><?php echo $row2['cust_last'].", ".$row2['cust_first'];?></option>
+                     <?php }?>
                     </select>
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->
@@ -137,7 +138,7 @@ endif;
                   
                   <div class="form-group">
                     <div class="input-group col-md-12">
-                      <button class="btn btn-lg btn-primary pull-right" id="daterange-btn" name="">
+                      <button class="btn btn-lg btn-twitter pull-right" id="daterange-btn" name="">
                         Search
                       </button>
            
@@ -158,20 +159,21 @@ endif;
     </div><!-- ./wrapper -->
 
     <!-- jQuery 2.1.4 -->
-    <script src="../plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <script src="..asset/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+	    <script src="../asset/js/jquery.min.js"></script>
     <!-- Bootstrap 3.3.5 -->
-    <script src="../bootstrap/js/bootstrap.min.js"></script>
-    <script src="../plugins/select2/select2.full.min.js"></script>
+    <script src="..asset/bootstrap/js/bootstrap.min.js"></script>
+    <script src="..asset/plugins/select2/select2.full.min.js"></script>
     <!-- SlimScroll -->
-    <script src="../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <script src="..asset/plugins/slimScroll/jquery.slimscroll.min.js"></script>
     <!-- FastClick -->
-    <script src="../plugins/fastclick/fastclick.min.js"></script>
+    <script src="..asset/plugins/fastclick/fastclick.min.js"></script>
     <!-- AdminLTE App -->
     <script src="../asset/js/app.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../asset/js/demo.js"></script>
-    <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
-    <script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>
+    <script src="..asset/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="..asset/plugins/datatables/dataTables.bootstrap.min.js"></script>
     
     <script>
       $(function () {
