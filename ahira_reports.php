@@ -1,4 +1,5 @@
- <?php include 'header.php';?>
+
+<?php include 'header.php';?>
   <body class="nav-md">
     <div class="container body">
       <div class="main_container">
@@ -11,18 +12,10 @@
         <!-- page content -->
         <div class="right_col" role="main"> 
 			<div class="row">
-				<div class="col-md-7 col-sm-7 col-xs-7">
-					<div class = "col-md-10 col-lg-10 col-xs-10">
-						<?php include 'change_password.php';?>
-					</div>
-					
+				<div class="col-md-12 col-sm-12 col-xs-12">					
+											
 				</div>
-				<!--<div class="col-md-5 col-sm-5 col-xs-5">
-				
-				
-				</div>-->
 			</div>
-			
         </div>		
         <!-- /page content -->
 

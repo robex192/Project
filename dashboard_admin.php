@@ -12,9 +12,28 @@
         <!-- page content -->
         <div class="right_col" role="main"> 
 			<div class="row">
-				<div class="col-md-10 col-sm-10 col-xs-10">		
- <?php include 'backup/index.php';?>
-					 	
+				<div class="col-md-12 col-sm-12 col-xs-12">		
+
+					<?php 
+					include 'dbcon.php';
+						$query1=mysqli_query($con,"select * from branch ORDER BY branch_name limit 4")or die(mysqli_error($con));
+						while ($row=mysqli_fetch_array($query1)){
+						$id=$row['branch_id'];?>
+						<a href  = "page_reports.php?id=<?php echo $row['branch_id'];?>">
+						<div class = "col-md-6 col-6-12 col-6">
+							
+							<div class = "panel panel-success">
+								<div class = "panel-heading">
+									<i class = "center fa fa-building"></i>
+								</div>
+								<div class = "panel-body">
+										<h1 class = ""><?php echo $row['branch_name'];?></h1>
+								</div>
+							</div>
+							
+						</div>
+						</a>
+						<?php } ?>						
 				</div>
 			</div>
         </div>		
